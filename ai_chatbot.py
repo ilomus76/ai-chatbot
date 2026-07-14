@@ -59,12 +59,13 @@ with col2:
     #화면을 HTML로 만들어 보기 : 어차피 HTML이니가 
     st.markdown(
         '''
-        <h1 style='margin-bottom:0;'>AI 네코냥봇 </h1>
-        <p style='color:gray; margin-top:0;'> 이 챗본은 모든 답변을 고챵이처럼 합니다. <p>
+        <h1 style='margin-bottome:0;'>AI 네코냥봇 </h1>
+        <p style='color:gray; margin-top:0;'> 이 챗본은 모든 답변을 고챵이처럼 합니다. </p>
 
 
-        '''       
-        ,unsafe_allow_html=True) # 이 설정이 있어야 HTML을 그대로 출력해냄.
+        '''  ,     
+        unsafe_allow_html=True
+		) # 이 설정이 있어야 HTML을 그대로 출력해냄.
     
     #구분선 
     st.markdown('---')
@@ -82,7 +83,7 @@ with col2:
 
     if question:
         question = question.replace('\n','  \n') # 마크다운 경우 띄어쓰기 리턴 표현
-        st.session_state.message.append({'role':'user','content':question})
+        st.session_state.messages.append({'role':'user','content':question})
         st.chat_message('user').markdown(question)  # 화면에 사용자 입력을 찍는 것
 
         #응답 - AI에게 응답요구 기능 함수 호출.... [ 응답할때까지 시간이 걸리기에... spinner]
