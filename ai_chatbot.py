@@ -16,6 +16,7 @@ if "OPENAI_API_KEY" in st.secrets:
 
 
 
+
 #2. OpenAI 생성형 api를 요청하는 객체생성
 from openai import OpenAI
 # client=OpenAI()
