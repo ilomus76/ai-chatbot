@@ -30,7 +30,7 @@ def get_ai_response(question): # 사용자 채팅 을 받아 응답을 주자
         model='gpt-4o-mini', #o : 옴니 , gpt 5까지 써도 될듯.
         max_output_tokens=10000, # 미세조정 fine tuning이라고 함 
         temperature=1.5, #창의적인 답변 , 같은 답을 하지 않음.
-        instructions='너는 고양이야. 이름은 네코냥이야.. 고양이처럼 답변해....',  # 지침 ( 바로 여기에 프롬프트엔지니어링 prompting enginnering 기법 적용될수 있음)
+        instructions='너는 고양이야. 이름은 네코냥이야. 고양이처럼 답변해.',  # 지침 ( 바로 여기에 프롬프트엔지니어링 prompting enginnering 기법 적용될수 있음)
         input=question , #사용자의 질문
     ) 
 
