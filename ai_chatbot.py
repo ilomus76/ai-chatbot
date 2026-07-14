@@ -4,14 +4,23 @@
 # pip install openai
 # pip install dotenv  # open ai 는 키를 한번밖에 보지 못하기 때문에 환경변수에 써놓고 읽어와야 함. 
 
-#1. 환경변수 .env 파일의 openap api key 값을 읽어오는 모듈 사용
-from dotenv import load_dotenv  # 색깔이 보라색이라 함수임을 알수 있다
-load_dotenv()
-# 함수만 호출하면 끝
+# #1. 환경변수 .env 파일의 openap api key 값을 읽어오는 모듈 사용
+# from dotenv import load_dotenv  # 색깔이 보라색이라 함수임을 알수 있다
+# load_dotenv()
+# # 함수만 호출하면 끝
+
+# 1. api key 읽어오기 -streamlit cloud 의 secret에 저장한 변수
+import streamlit as st
+if "OPENAI_APK_KEY" in st.secrets:
+    api_key=st.secrets['OPEN_API_KEY']
+
+
 
 #2. OpenAI 생성형 api를 요청하는 객체생성
 from openai import OpenAI
-client=OpenAI()
+# client=OpenAI()
+client=OpenAI(api_key=api_key)
+
 
 #사용자 '질문'dmf 파라미터로 받아 OPEN API로 응답한 글씨를 리턴해주는 기능함수 만들기
 def get_ai_response(question): # 사용자 채팅 을 받아 응답을 주자
@@ -96,7 +105,14 @@ with col2:
 
     #외부 모듈을 사용했다면 에러발생 .. streamlit cloud에는 module이 설치되어 있지 않기에...
     #직접 설치는 안되고.. 특정 이름의 문서를 주면 이를 기반으로 자동 설치됨...
-    #파이썬의 모듈 목록을 저장해 놓은 문서 requirements.txt를 만들고 
+    #파이썬의 모듈 목록을 저장해 놓은 문서 requirements.txt를 만들고 안에 설치할 모듈 목록 등록
+    #github에 push
+
+    #외부 api key를 사용한다면 역시 에러가 또 발생..
+    #.env 파일은 업로드 하면 완되는 비밀파일이기에..
+
+    #streamlit cloud에서 배포된 프로젝트마다 사용한 인증키나 비밀번호 같은 정보들을 
+    #설정해 놓을 수 있는 기능이 제공됨. 
 
 
 # git init
