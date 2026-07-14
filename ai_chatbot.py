@@ -11,8 +11,8 @@
 
 # 1. api key 읽어오기 -streamlit cloud 의 secret에 저장한 변수
 import streamlit as st
-if "OPEN_API_KEY" in st.secrets:
-    api_key=st.secrets['OPEN_API_KEY']
+if "OPENAI_API_KEY" in st.secrets:
+    api_key=st.secrets['OPENAI_API_KEY']
 
 
 
