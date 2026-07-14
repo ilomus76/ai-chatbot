@@ -93,3 +93,19 @@ with col2:
     #2)그 다음에 Streamlit Cloud 접속 및 (GitHub계정)로그인 [ 회원가입했다는 전제]
     #3) [New app]버튼을 클릭 후 GitHub저장소를 선택 
     #4) 그러면 자동으로 배포됨 (도메인 일부 수정 가능)
+
+    #외부 모듈을 사용했다면 에러발생 .. streamlit cloud에는 module이 설치되어 있지 않기에...
+    #직접 설치는 안되고.. 특정 이름의 문서를 주면 이를 기반으로 자동 설치됨...
+    #파이썬의 모듈 목록을 저장해 놓은 문서 requirements.txt를 만들고 
+
+
+# git init
+# git add --all or git add . # 이폴더안에 있는 것을 깃으로 관리하겠다
+# git commit -m init
+# github에서 폴더 만들기 
+# git remote add origin   [ git remote add origin https://github.com/ilomus76/ai-chatbot.git]
+# git push -u origin main 
+
+#streamlit community cloud -> free -> github 
+
+
